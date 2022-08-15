@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="x5-orientation" content="landscape">
+        <meta name="screen-orientation" content="landscape">
+        <title>奥迪 Q4 e-tron</title>
+        <link rel="stylesheet" href="css/main.css" />
+        <script src="js/flexible.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	    <script>
+	  //   	let actionData = [
+	  //   		//position:x越大越往外;y越大越往上；z越大越往左； 
+			// 	{
+			// 		title:"车轮轮胎",key:"lt",
+			// 		des:"全新样式的19英寸轮圈非常清爽，搭配35扁平比的轮胎和红色卡钳，视觉冲击力还是很强的。",
+			// 		lookat:{x:0.9980879215009341,y:0.007079075530832986,z:-0.06140348234077601},
+			// 		position:{x:0.9845465139899555,y:0.8263954517699479,z:1.469557687200901}
+			// 	}
+			// ];
+			let pointData = {
+				// 'zhcm','zqcm','yhcm','yqcm'
+				zhcm:{
+					title:"左后车门",key:"zhcm",type:"kj",index:0,
+					position:{x:0.540,y:0.805,z:1.060},
+					p2:{x:-1.823,y:1.048,z:7.289}
+				},
+				// zhcm_2:{
+				// 	title:"左后车门",key:"zhcm",type:"kj",index:0,
+				// 	position:{x:0.792,y:1.022,z:1.698},
+				// 	p2:{x:-1.823,y:1.048,z:7.289}
+				// },
+				zqcm:{
+					title:"左前车门",key:"zqcm",type:"kj",index:1,
+					position:{x:-0.080,y:0.817,z:1.057},
+					p2:{x:-1.823,y:1.048,z:7.289}
+				},
+				yhcm:{
+					title:"右后车门",key:"yhcm",type:"kj",index:2,
+					position:{x:0.955,y:0.970,z:-1.121},
+					p2:{x:-1.823,y:1.048,z:7.289}
+				},
+				yqcm:{
+					title:"右前车门",key:"yqcm",type:"kj",index:3,
+					position:{x:-0.103,y:0.994,z:-1.086},
+					p2:{x:-1.823,y:1.048,z:7.289}
+				},
+				chedeng:{
+					title:"车灯",key:"chedeng",type:"wg",
+					des:"矩阵式LED大灯首次采用配有日间行车灯签名模式，4种签名模式间自由切换（通过MMI系统设置），提升了人车交互感及仪式感",
+					// position:{x:-2.295,y:0.751,z:-0.563},
+					// p2:{x:-6.249,y:0.73,z:0.116}
+					position:{x:-2.151,y:0.861,z:0.835},
+					p2:{x:-5.054,y:1.453,z:3.540}
+				},
+				luntai:{
+					title:"轮胎",key:"luntai",type:"wg",
+					des:"越级搭载21寸超大运动轮毂，采用全新造型设计，极具视觉张力和车身动感线条搭配成型，坐拥越级操作性能。",
+					// position:{x:1.335,y:0.373239219,z:0.980189555},
+					position:{x:-1.409,y:0.854,z:-1.078},
+					p2:{x:-5.7995,y:0.831,z:-1.748}
+				},
+				donglixitong:{
+					title:"动力系统",key:"donglixitong",type:"xn",
+					des:"Q4 e-tron基于纯电MEB平台打造，搭载最新版本的E3（上标）智能电气架构，智能化控制，实现人车交互友好。79.7kwh大容量电池系统和双电机全轮驱动，带来更长、更真实的续航。 ",
+					// position:{x:0.770,y:1.690,z:-0.109},
+					position:{x:-1.686,y:1.228,z:0.003},
+					p2:{x:-2.794,y:6.285,z:-3.7552}
+				},
+				//huandanggan:{
+				// 	title:"换档杆",key:"huandanggan",type:"ns",
+				// 	des:"全新一代换挡杆专门为e-tron车型开发。 中控台采用了最佳的人体工程学设计，换档杆提供了根据电动驾驶感觉量身定制的创新操作模式。<br><br>可自动切换到D档，B档模式，B档可提供最大限度的能量回收。电动泊车制动按钮取代原来的P档。",
+				// 	position:{x:-0.408,y:0.771,z:-1.036},
+				// },
+				//zhongkongpingmu:{
+				// 	title:"中控屏幕",key:"zhongkongpingmu",type:"ns",
+				// 	des:"标配11.6寸高清触控屏，触手可及，触感十足<br><br>e-tron专属Audi connect和Asterix安卓应用平台，完美将用车乐趣和舒适性融合",
+				// 	position:{x:-0.408,y:0.771,z:-1.036},
+				// },
+				//yibiaopan:{
+				// 	title:"仪表盘",key:"yibiaopan",type:"ns",
+				// 	des:"标配10.25寸虚拟座舱表盘，3种主题切换，视觉质感更佳、提升整体内饰格调",
+				// 	position:{x:-0.408,y:0.771,z:-1.036},
+				// },
+				chongdian:{
+					title:"充电功能",key:"chongdian",type:"wg",
+					des:"快充支持100kw，SOC从5%充到80%仅仅需要41分钟<br>慢充最大支持7.2kw，充电时间12小时 ",
+					position:{x:1.470,y:0.970,z:0.999},
+					p2:{x:5.765,y:1.824,z:2.029}
+				},
+				chexing:{
+					title:"车型介绍",key:"chexing",type:"xn",
+					position:{x:0,y:1.5,z:-2},
+					scale:{x:2,y:1.08,z:1}
+				},
+				xingneng:{
+					title:"性能介绍",key:"xingneng",type:"xn",
+					position:{x:0,y:1.5,z:2.4},
+					scale:{x:2.84,y:1.08,z:1}
+				}
+			};
+	    	var browserR = browserRedirect();
+	    	$(function(){
+//				if(browserR == "pc"){
+//					$("body").html("<p style='line-height:56px;'>请在微信中打开。</p>");
+//				}else{
+					$("body").addClass("model");
+					$("#main,.loading,.logo").show();
+//				}
+	    	});
+	    	function browserRedirect() {
+				var sUserAgent = navigator.userAgent.toLowerCase();
+				var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+				var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+				var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+				var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+				var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+				var bIsAndroid = sUserAgent.match(/android/i) == "android";
+				var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+				var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+				if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+					return "phone";
+				} else {
+					return "pc";
+				}
+			}
+		</script>
+    </head>
+    <body>
+    	<div class="main">
+	    	<div class="loading">
+	    		<div class="loading-box">
+	    			<img src="images/loading.png" />
+	    			<p class="bar"><span><i></i></span><b>0%</b></p>
+	    			<p>奥迪 Q4 e-tron 突破科技 启迪未来</p>
+	    		</div>
+	    	</div>
+	    	<div class="detail">
+	    		<p class="img"><img src="#" /></p>
+	    		<p class="title"></p>
+	    		<p class="des"></p>
+	    	</div>
+	    	<div class="pagetitle">奥迪 Q4 e-tron</div>
+	    	<div class="oper">
+	    		<div class="tabs">
+		    		<span type="wg" class="on">外观</span>
+		    		<span type="xn">性能</span>
+		    		<span type="kj">空间</span>
+		    		<span type="ns">内饰</span>
+	    		</div>
+	    		<div class="video-btn">观看视频</div>
+	    	</div>
+	    	<div class="video">
+	    		<div class="video-close"><img src="./images/return-icon.png" /></div>
+	    		<video id="carvideo" poster="images/tvc-video.png" src="./images/tvc.mp4" controls="controls">您的浏览器不支持 video 标签。</video>
+	    	</div>
+	    	<!-- <div class="demo"></div> -->
+			<div id="car"></div>
+		</div>
+        <script src="js/pano.js" type="module" charset="utf-8"></script>
+    </body>
+</html>

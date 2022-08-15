@@ -1,0 +1,255 @@
+html,body{
+	padding:0;
+	margin:0;
+	font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-align: left;
+	width:100%;
+	height:100%;
+	overflow: hidden;
+	user-select: none;
+}
+div{
+	user-select: none;
+}
+.main{
+	width:100%;
+	height:100%;
+	overflow: hidden;
+}
+@media screen and (orientation: portrait) {
+  /*竖屏 css*/
+  .main{
+  	/*transform: rotate(90deg);
+  	transform-origin: 0 0;
+  	width: 100vh;
+    height: 100vw;
+    left: 100%;
+    position: absolute;*/
+
+    transform: rotate(90deg) translate(0,-100vmin);
+  	transform-origin: top left;
+  	width: 100vmax;
+    height: 100vmin;
+  }
+} 
+@media screen and (orientation: landscape) {
+  /*横屏 css*/
+}
+*{
+	box-sizing: border-box;
+}
+h1,h2,h3,h4,h5,ul,li,p{
+	margin:0;
+	padding:0;
+}
+.primary{
+	color: #ee7030;/*rgba(238,112,48,1);*/
+}
+.demo{
+	position: absolute;
+	bottom:0;
+	right:0;
+	background-color: rgba(0,0,0,0.9);
+	color:#fff;
+	font-size:0.24rem;
+	padding:0 0.1rem;
+	z-index:99;
+}
+.loading{
+	position: absolute;
+	z-index:999;
+	/*background-color:rgba(0,0,0,1);*/
+	background:url(../images/bg.png) no-repeat center center #000;
+	background-size:auto 100%;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	color:#fff;
+}
+.loading-box{
+	width:100%;
+	height:100%;
+	position: absolute;
+	height:1.4rem;
+	bottom:0.4rem;
+	left:0;
+	right:0;
+	text-align: center;
+	font-weight: bold;
+	z-index:999999;
+}
+.loading-box img{
+	height:0.5rem;
+	animation: myrotate 1s infinite;
+    -webkit-animation:myrotate 1s infinite;
+}
+@keyframes myrotate
+{
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+@-webkit-keyframes myrotate
+{
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+.loading-box .bar{
+	width:40%;
+	height:0.1rem;
+	margin:0.2rem auto;
+	display: flex;
+	align-items: center;
+}
+.loading-box .bar span{
+	flex:1;
+	background: #b7b7b6;
+	border-radius: 0.05rem;
+	height:0.1rem;
+	margin-right:0.1rem;
+}
+.loading-box .bar span i{
+	display: block;
+	border-radius: 0.05rem;
+	height:0.1rem;
+	background: #ee7030;
+	transition: all 0.1s;
+}
+.loading-box .bar b{
+	flex-shrink: 0
+}
+#car{
+	z-index: 1;
+	position: absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+}
+.detail{
+	position: absolute;
+	left:50%;
+	top:50%;
+	transform: translate(-15%,-50%);
+	z-index: 10;
+	color:#fff;
+	background-color: rgba(0,0,0,0.85);
+	padding:0.2rem;
+	display:none;
+	width:4rem;
+	border-radius: 0.04rem;
+	border:0.06rem solid rgba(255,255,255,0.5);
+}
+.detail .title{
+	padding:0.05rem;
+	font-weight: bold;
+	color: #ee7030;
+}
+.detail .des{
+	font-size:0.24rem;
+}
+.detail .img img{
+	/*height:.2rem*/;
+	width:100%;
+}
+.pagetitle{
+	font-size:0.3rem;
+	font-weight: bold;
+	position: absolute;
+	z-index: 8;
+	left:50%;
+	top:0.2rem;
+	color: #fff;
+	transform: translate(-50%,0);
+}
+.oper{
+	position:absolute;
+	bottom:0.2rem;
+	left:50%;
+	transform: translate(-50%,0);
+	width:9rem;
+	margin:0 auto;
+	z-index: 8;
+	height: 0.8rem;
+	line-height: 0.78rem;
+	font-size:0.28rem;
+	display: flex;
+}
+.tabs{
+	display: flex;
+	background-color: rgba(0,0,0,0.5);
+	border-radius: 0.5rem;
+	color:#fff;
+	margin-right:0.5rem;
+	padding:0 0.5rem;
+}
+.tabs span{
+	padding:0 0.2rem;
+	border-top:0.03rem solid transparent;
+}
+.tabs span.on{
+	color:#ee7030;
+	font-weight: bold;
+	border-top:0.03rem solid #ee7030;
+	font-size:0.32rem;
+}
+.video-btn{
+	height: 0.8rem;
+	line-height: 0.78rem;
+	background-color: rgba(238,112,48,0.8);;
+	color:#fff;
+	padding:0 0.5rem 0 1rem;
+	border-radius: 0.5rem;
+	border:0.05rem solid rgba(255,255,255,0.5);
+	position:relative;
+}
+.video-btn::before{
+	content:"";
+	background:url(../images/video-icon.png) no-repeat right 0.14rem transparent;
+	background-size:0.4rem 0.4rem;
+	position: absolute;
+	left:0;
+	top:0;
+	width:0.8rem;
+	height:0.8rem;
+	vertical-align: middle;
+}
+.video{
+	position: absolute;
+	z-index:10;
+	padding:0.8rem;
+	left:0;
+	right: 0;
+	top:0;
+	bottom:0;
+	display: none;
+	/*padding:1.0rem 0 0;*/
+	background-color: rgba(0,0,0,0.75);
+	padding:0.9rem;
+}
+.video video{
+	width:100%;
+	height:100%;
+	background-color:#fff;
+	z-index:1;
+	position: relative;
+}
+.video-close{
+	position: absolute;
+	left:0.2rem;
+	top:0.1rem;
+	z-index:10;
+}
+.video-close img{
+	width:0.8rem;
+	height: 0.8rem;
+}
+
+
+
+
+
+
